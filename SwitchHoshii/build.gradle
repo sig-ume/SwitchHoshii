@@ -27,3 +27,5 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+mainClassName = 'jp.sigre.hoshii.DemoApplication' // パッケージ名を含めたクラス名を指定する
