@@ -84,9 +84,9 @@ public class DemoApplication{
 
 		System.out.println("event: " + event);
 		System.out.println("channel token: "+channelTtoken);
-		System.out.println("fixie url: " + fixieUrl);
-		System.out.println("fixie host :" + fixieHost);
-		System.out.println("fixie port :" + fixiePort);
+		System.out.println("fixie url    : " + fixieUrl);
+		System.out.println("fixie host   : " + fixieHost);
+		System.out.println("fixie port   : " + fixiePort);
 
 		System.out.println("proxy address: " + prx.address());
 
