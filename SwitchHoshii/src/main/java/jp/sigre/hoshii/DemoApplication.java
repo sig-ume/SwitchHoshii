@@ -72,7 +72,7 @@ public class DemoApplication{
 
 		//Proxy prx = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(fixieHost, fixiePort));
 		Proxy prx = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(fixieHost, fixiePort));
-		clientBuilder = clientBuilder.proxy(prx).proxyAuthenticator(proxyAuthenticator);
+		clientBuilder.proxy(prx).proxyAuthenticator(proxyAuthenticator);
 //
 //		OkHttpClient client = clientBuilder.build();
 //		Request request = new Request.Builder().url("http://www.example.com").build();
