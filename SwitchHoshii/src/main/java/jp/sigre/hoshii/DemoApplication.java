@@ -76,8 +76,8 @@ public class DemoApplication {
 //		Response response = client.newCall(request).execute();
 //
 //		System.out.println(response.body().string());
-
-		lineMessagingService = (LineMessagingService) clientBuilder.build();
+//
+//		lineMessagingService = (LineMessagingService) clientBuilder.build();
 
 		System.out.println("event: " + event);
 		final BotApiResponse apiResponse = lineMessagingService
