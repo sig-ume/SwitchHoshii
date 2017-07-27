@@ -70,9 +70,9 @@ public class DemoApplication{
 			}
 		};
 
+		//Proxy prx = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(fixieHost, fixiePort));
 		Proxy prx = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(fixieHost, fixiePort));
-		clientBuilder.proxy(prx)
-		.proxyAuthenticator(proxyAuthenticator);
+		clientBuilder = clientBuilder.proxy(prx).proxyAuthenticator(proxyAuthenticator);
 //
 //		OkHttpClient client = clientBuilder.build();
 //		Request request = new Request.Builder().url("http://www.example.com").build();
@@ -85,6 +85,8 @@ public class DemoApplication{
 		System.out.println("event: " + event);
 		System.out.println("channel token: "+channelTtoken);
 		System.out.println("fixie url: " + fixieUrl);
+		System.out.println("fixie host :" + fixieHost);
+		System.out.println("fixie port :" + fixiePort);
 
 		System.out.println("proxy address: " + prx.address());
 
