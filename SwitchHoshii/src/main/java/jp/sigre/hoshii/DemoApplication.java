@@ -69,7 +69,9 @@ public class DemoApplication{
 						.build();
 			}
 		};
-		clientBuilder.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(fixieHost, fixiePort)))
+
+		Proxy prx = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(fixieHost, fixiePort));
+		clientBuilder.proxy(prx)
 		.proxyAuthenticator(proxyAuthenticator);
 //
 //		OkHttpClient client = clientBuilder.build();
@@ -81,6 +83,10 @@ public class DemoApplication{
 //		lineMessagingService = (LineMessagingService) clientBuilder.build();
 
 		System.out.println("event: " + event);
+		System.out.println("channel token: "+channelTtoken);
+		System.out.println("fixie url: " + fixieUrl);
+
+		System.out.println(prx.address());
 
 		ReplyMessage replyMessage = new ReplyMessage(event.getReplyToken(),
 				Collections.singletonList(new TextMessage(event.getSource().getUserId())));
