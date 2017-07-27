@@ -86,7 +86,7 @@ public class DemoApplication{
 		System.out.println("channel token: "+channelTtoken);
 		System.out.println("fixie url: " + fixieUrl);
 
-		System.out.println(prx.address());
+		System.out.println("proxy address: " + prx.address());
 
 		ReplyMessage replyMessage = new ReplyMessage(event.getReplyToken(),
 				Collections.singletonList(new TextMessage(event.getSource().getUserId())));
@@ -98,7 +98,7 @@ public class DemoApplication{
 		                .build()
 		                .replyMessage(replyMessage)
 		                .execute();
-		System.out.println(response.code() + " " + response.message());
+		System.out.println("response: " + response.code() + " " + response.message());
 
 		final BotApiResponse apiResponse = lineMessagingService
 				.replyMessage(new ReplyMessage(event.getReplyToken(),
