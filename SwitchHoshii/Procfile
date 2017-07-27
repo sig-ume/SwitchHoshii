@@ -1,0 +1,1 @@
+web: target/universal/stage/bin/line-bot-trial -Dhttp.port=${PORT} -Dhttp.proxyHost=velodrome.usefixie.com -Dhttp.proxyPort=80 -Dhttp.proxyUser=fixie -Dhttp.proxyPassword=0ohQfX4c9Si6e0w

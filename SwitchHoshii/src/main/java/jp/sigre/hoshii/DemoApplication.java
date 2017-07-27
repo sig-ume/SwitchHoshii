@@ -4,8 +4,6 @@
 package jp.sigre.hoshii;
 
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
 import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +19,6 @@ import com.linecorp.bot.model.message.TextMessage;
 import com.linecorp.bot.model.response.BotApiResponse;
 import com.linecorp.bot.spring.boot.annotation.EventMapping;
 import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
-
-import okhttp3.Authenticator;
-import okhttp3.Credentials;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.Route;
 
 /**
  * @author sigre
@@ -52,26 +43,26 @@ public class DemoApplication {
 	public void handleTextMessageEvent(MessageEvent<TextMessageContent> event) throws Exception {
 
 
-		String fixieUrl = System.getenv("FIXIE_URL");
-		String[] fixieValues = fixieUrl.split("[/(:\\/@)/]+");
-		String fixieUser = fixieValues[1];
-		String fixiePassword = fixieValues[2];
-		String fixieHost = fixieValues[3];
-		int fixiePort = Integer.parseInt(fixieValues[4]);
-
-		OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
-		Authenticator proxyAuthenticator = new Authenticator() {
-			@Override public Request authenticate(Route route, Response response) throws IOException {
-				String credential = Credentials.basic(fixieUser, fixiePassword);
-				return response.request().newBuilder()
-						.header("Proxy-Authorization", credential)
-						.build();
-			}
-		};
-		clientBuilder.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(fixieHost, fixiePort)))
-		.proxyAuthenticator(proxyAuthenticator);
-
-		OkHttpClient client = clientBuilder.build();
+//		String fixieUrl = System.getenv("FIXIE_URL");
+//		String[] fixieValues = fixieUrl.split("[/(:\\/@)/]+");
+//		String fixieUser = fixieValues[1];
+//		String fixiePassword = fixieValues[2];
+//		String fixieHost = fixieValues[3];
+//		int fixiePort = Integer.parseInt(fixieValues[4]);
+//
+//		OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
+//		Authenticator proxyAuthenticator = new Authenticator() {
+//			@Override public Request authenticate(Route route, Response response) throws IOException {
+//				String credential = Credentials.basic(fixieUser, fixiePassword);
+//				return response.request().newBuilder()
+//						.header("Proxy-Authorization", credential)
+//						.build();
+//			}
+//		};
+//		clientBuilder.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(fixieHost, fixiePort)))
+//		.proxyAuthenticator(proxyAuthenticator);
+//
+//		OkHttpClient client = clientBuilder.build();
 //		Request request = new Request.Builder().url("http://www.example.com").build();
 //		Response response = client.newCall(request).execute();
 //
